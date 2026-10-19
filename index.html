@@ -230,16 +230,15 @@ nav .nav-inner{ max-width:none; display:flex; align-items:center; justify-conten
 .why-card p{ margin:8px 0 0; font-size:14.5px; line-height:1.5; opacity:0.8; }
 
 /* further reading */
-.reading-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px; margin-top:28px; }
-@media (max-width:980px){ .reading-grid{ grid-template-columns:repeat(2, minmax(0,1fr)); } }
-@media (max-width:600px){ .reading-grid{ grid-template-columns:minmax(0,1fr); } }
-.reading-card{ display:flex; flex-direction:column; gap:8px; padding:22px; border-radius:12px; background:var(--paper); color:var(--ink); text-decoration:none; box-shadow:0 0 0 1px var(--rule); transition:transform 0.15s ease, box-shadow 0.15s ease; }
-.reading-card:hover{ transform:translateY(-3px); box-shadow:0 0 0 1px var(--rule), 0 8px 20px rgba(0,0,0,0.10); }
-.reading-card:focus-visible{ outline:3px solid var(--green-dark); outline-offset:3px; }
-.reading-meta{ font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:.07em; color:var(--blue-dark); }
-.reading-title{ font-size:17px; font-weight:700; line-height:1.3; text-wrap:balance; }
-.reading-summary{ font-size:14px; line-height:1.5; opacity:0.75; }
-.reading-cta{ margin-top:auto; padding-top:6px; font-size:13.5px; font-weight:700; color:var(--green-dark); }
+.reading-grid{ display:grid; grid-template-columns:repeat(6, minmax(150px,1fr)); gap:12px; margin-top:16px; overflow-x:auto; padding-bottom:6px; scroll-snap-type:x mandatory; }
+.reading-card{ display:flex; flex-direction:column; gap:6px; padding:14px; border-radius:10px; background:var(--paper); color:var(--ink); text-decoration:none; box-shadow:inset 0 0 0 1px var(--rule); scroll-snap-align:start; transition:background 0.15s ease; }
+.reading-card:hover{ background:var(--panel-blue); }
+.reading-card:focus-visible{ outline:3px solid var(--green-dark); outline-offset:-3px; }
+.reading-meta{ font-size:10.5px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--blue-dark); line-height:1.35; }
+.reading-title{ font-size:13.5px; font-weight:700; line-height:1.3; }
+.reading-cta{ margin-top:auto; padding-top:4px; font-size:12.5px; font-weight:700; color:var(--green-dark); }
+.res-sub{ margin-top:28px; font-size:20px; font-weight:700; }
+.res-sub-gap{ margin-top:56px; }
 
 /* methodology — blue theme */
 .aims-panel{ margin-top:28px; background:var(--panel-blue); border-radius:16px; padding:28px; }
@@ -251,14 +250,14 @@ nav .nav-inner{ max-width:none; display:flex; align-items:center; justify-conten
 .aim h4{ margin:0; font-size:16px; font-weight:800; color:var(--blue-dark); }
 .aim p{ margin:6px 0 0; font-size:14px; line-height:1.5; opacity:0.8; }
 .method-sub{ margin-top:44px; font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:var(--blue-dark); }
-.steps{ list-style:none; margin:16px 0 0; padding:0; display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:14px; counter-reset:none; }
-@media (max-width:1000px){ .steps{ grid-template-columns:minmax(0,1fr); } }
+.steps{ list-style:none; margin:16px 0 0; padding:0; display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:14px; }
+@media (max-width:1000px){ .steps{ grid-template-columns:repeat(2, minmax(0,1fr)); } }
+@media (max-width:520px){ .steps{ grid-template-columns:minmax(0,1fr); } }
 .step{ position:relative; background:var(--panel-blue); border-radius:14px; padding:20px 18px 22px; }
-.step-num{ display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:50%; background:var(--blue-dark); color:var(--paper); font-weight:800; font-size:15px; }
+.step-icon{ display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:10px; background:var(--paper); color:var(--blue-dark); }
+.step-icon svg{ width:22px; height:22px; }
 .step h3{ margin-top:14px; font-size:16.5px; font-weight:800; color:var(--blue-dark); }
 .step p{ margin:6px 0 0; font-size:14px; line-height:1.5; opacity:0.8; }
-.step-now{ background:var(--paper); box-shadow:inset 0 0 0 2px var(--blue-dark); }
-.step-tag{ display:inline-block; margin-top:12px; padding:3px 10px; border-radius:999px; background:var(--blue-dark); color:var(--paper); font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; }
 
 /* team — circular headshots, lead on top, everyone else in a row below */
 .team-group{ margin-top:36px; font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:var(--green-dark); }
@@ -457,7 +456,7 @@ footer{ padding:32px 1in; font-size:13px; display:flex; align-items:center; gap:
 <nav><div class="wrap-wide nav-inner">
   <a class="brand" href="#hero">GSI Cross-City Research</a>
   <div class="navlinks">
-    <a href="#about">About</a><a href="#cities">Cities</a><a href="#method">Method</a><a href="#timeline">Timeline</a><a href="#team">Team</a><a href="#contact">Contact</a>
+    <a href="#about">About</a><a href="#cities">Cities</a><a href="#method">Method</a><a href="#timeline">Timeline</a><a href="#team">Team</a><a href="#resources">Resources</a>
   </div>
 </div></nav>
 
@@ -586,48 +585,6 @@ footer{ padding:32px 1in; font-size:13px; display:flex; align-items:center; gap:
       <h3>Creates jobs and advances equity</h3>
       <p>Maintenance work can build green jobs and community capacity, and reduce environmental inequities.</p>
     </div>
-  </div>
-</div></section>
-
-<section id="reading"><div class="wrap-wide">
-  <h2>Perspectives on GSI and Urban Flooding</h2>
-  <div class="reading-grid">
-    <a class="reading-card" href="https://water.phila.gov/drops/15-years-of-green-city-clean-waters/" target="_blank" rel="noopener">
-      <span class="reading-meta">Philadelphia Water Department · July 2026</span>
-      <span class="reading-title">15 Years of Green City, Clean Waters</span>
-      <span class="reading-summary">Philadelphia's milestone report on its green-first plan to control stormwater and sewer overflows.</span>
-      <span class="reading-cta">Read article ↗</span>
-    </a>
-    <a class="reading-card" href="https://beyond.ubc.ca/urban-flooding-calls-for-new-stormwater-infrastructure-in-canadian-cities" target="_blank" rel="noopener">
-      <span class="reading-meta">The Conversation · September 2024</span>
-      <span class="reading-title">Urban flooding calls for new stormwater infrastructure in Canadian cities</span>
-      <span class="reading-summary">Why aging sewers are struggling with heavier storms, and how green roofs, rain gardens and sponge parks can help.</span>
-      <span class="reading-cta">Read article ↗</span>
-    </a>
-    <a class="reading-card" href="https://e360.yale.edu/features/cities-flooding-combined-sewer-overflows-climate-change" target="_blank" rel="noopener">
-      <span class="reading-meta">Yale Environment 360 · August 2024</span>
-      <span class="reading-title">Faced With Heavier Rains, Cities Scramble to Control Polluted Runoff</span>
-      <span class="reading-summary">How Philadelphia, Milwaukee, Boston and Washington, DC are balancing green infrastructure with tunnels and tanks.</span>
-      <span class="reading-cta">Read article ↗</span>
-    </a>
-    <a class="reading-card" href="https://globalnews.ca/news/10012631/municipalities-looking-to-build-sponge-cities-for-extreme-rain-events-what-does-that-mean" target="_blank" rel="noopener">
-      <span class="reading-meta">Global News / The Canadian Press · October 2023</span>
-      <span class="reading-title">Municipalities looking to build 'sponge cities' for extreme rain events. What does that mean?</span>
-      <span class="reading-summary">Montreal's sponge parks and sponge sidewalks, and why Canadian cities are following suit.</span>
-      <span class="reading-cta">Read article ↗</span>
-    </a>
-    <a class="reading-card" href="https://macleans.ca/society/environment/sponge-city-flooding-solution/" target="_blank" rel="noopener">
-      <span class="reading-meta">Maclean's · September 2023</span>
-      <span class="reading-title">The Big Idea: Investing in "sponge cities" can mitigate the toll of climate change</span>
-      <span class="reading-summary">A stormwater engineer on redesigning Canadian cities to absorb and slowly release rainwater.</span>
-      <span class="reading-cta">Read article ↗</span>
-    </a>
-    <a class="reading-card" href="https://theconversation.com/how-green-roofs-can-protect-city-streets-from-flooding-82679" target="_blank" rel="noopener">
-      <span class="reading-meta">The Conversation · 2017</span>
-      <span class="reading-title">How green roofs can protect city streets from flooding</span>
-      <span class="reading-summary">University of Toronto research on how much stormwater green roofs can hold during Toronto's record-wet seasons.</span>
-      <span class="reading-cta">Read article ↗</span>
-    </a>
   </div>
 </div></section>
 
@@ -836,35 +793,34 @@ footer{ padding:32px 1in; font-size:13px; display:flex; align-items:center; gap:
     </div>
   </div>
 
-  <h3 class="method-sub">How we're doing it</h3>
-  <ol class="steps">
+  <h3 class="method-sub">Our methods</h3>
+  <ul class="steps">
     <li class="step">
-      <span class="step-num">1</span>
+      <span class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/><path d="M9 12h7M9 16h7"/></svg></span>
       <h3>Policy analysis</h3>
       <p>Reviewed dozens of city documents to understand how GSI is being used, or not used.</p>
     </li>
     <li class="step">
-      <span class="step-num">2</span>
+      <span class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
       <h3>Choosing our cities</h3>
       <p>Narrowed down our study cities, spoke with urban planners, and gathered data on GSI sites.</p>
     </li>
     <li class="step">
-      <span class="step-num">3</span>
+      <span class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20c0-8.5 6.5-15 15-15 0 8.5-6.5 15-15 15z"/><path d="M5 20l8-8"/></svg></span>
       <h3>Site visits</h3>
       <p>Visited GSI sites in each city and carried out site analyses.</p>
     </li>
     <li class="step">
-      <span class="step-num">4</span>
+      <span class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v10H9l-5 4z"/></svg></span>
       <h3>Interviews</h3>
-      <p>Held semi-structured interviews with residents, planners, maintenance workers, and others.</p>
+      <p>Semi-structured interviews with residents, planners, maintenance workers, and others.</p>
     </li>
-    <li class="step step-now">
-      <span class="step-num">5</span>
-      <h3>Analysis</h3>
-      <p>Analyzing what we heard in the interviews.</p>
-      <span class="step-tag">In progress</span>
+    <li class="step">
+      <span class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></span>
+      <h3>Qualitative analysis</h3>
+      <p>Coding interview transcripts to find patterns across the four cities.</p>
     </li>
-  </ol>
+  </ul>
 </div></section>
 
 <section id="timeline"><div class="wrap">
@@ -874,7 +830,7 @@ footer{ padding:32px 1in; font-size:13px; display:flex; align-items:center; gap:
       <div class="tl-item"><div class="tl-date">Aug 2024</div><h3>Project kickoff</h3></div>
       <div class="tl-item"><div class="tl-date">Sep 2024</div><h3>Literature review &amp; policy analysis</h3></div>
       <div class="tl-item"><div class="tl-date">Feb 2025</div><h3>Interview recruitment &amp; conduction</h3></div>
-      <div class="tl-item"><div class="tl-date">May 2025</div><h3>Data collection</h3><p style="margin-top:4px; font-size:14px;">Dozens of interviews completed across all four cities.</p></div>
+      <div class="tl-item"><div class="tl-date">May 2025</div><h3>Data collection</h3></div>
       <div class="tl-item"><div class="tl-date">Jun 2026</div><h3>Analysis</h3></div>
       <div class="tl-item"><h3>Manuscript drafting</h3></div>
       <div class="tl-item"><div class="tl-date">Sep 2026</div><h3>Approved for a journal</h3></div>
@@ -944,10 +900,12 @@ footer{ padding:32px 1in; font-size:13px; display:flex; align-items:center; gap:
   </div>
 </div></section>
 
-<section id="involved"><div class="wrap-wide">
+<section id="resources"><div class="wrap-wide">
+  <h2>Resources</h2>
+
   <div class="involved-grid">
     <div class="involved-text">
-      <h2>Interested in being involved?</h2>
+      <h3 class="res-sub">Interested in being involved?</h3>
       <p class="involved-lead">We want to hear from people in Portland, Toronto, Vancouver, and Washington, DC, <strong>whether or not you know anything about green stormwater infrastructure.</strong> No experience needed.</p>
       <p class="involved-label">We're interviewing:</p>
       <ul class="who-list">
@@ -971,6 +929,40 @@ footer{ padding:32px 1in; font-size:13px; display:flex; align-items:center; gap:
         <span class="flier-cta">Open to print or download ↗</span>
       </a>
     </div>
+  </div>
+
+  <h3 class="res-sub res-sub-gap">Perspectives on GSI and urban flooding</h3>
+  <div class="reading-grid">
+    <a class="reading-card" href="https://water.phila.gov/drops/15-years-of-green-city-clean-waters/" target="_blank" rel="noopener">
+      <span class="reading-meta">Philadelphia Water Department · July 2026</span>
+      <span class="reading-title">15 Years of Green City, Clean Waters</span>
+      <span class="reading-cta">Read article ↗</span>
+    </a>
+    <a class="reading-card" href="https://beyond.ubc.ca/urban-flooding-calls-for-new-stormwater-infrastructure-in-canadian-cities" target="_blank" rel="noopener">
+      <span class="reading-meta">The Conversation · September 2024</span>
+      <span class="reading-title">Urban flooding calls for new stormwater infrastructure in Canadian cities</span>
+      <span class="reading-cta">Read article ↗</span>
+    </a>
+    <a class="reading-card" href="https://e360.yale.edu/features/cities-flooding-combined-sewer-overflows-climate-change" target="_blank" rel="noopener">
+      <span class="reading-meta">Yale Environment 360 · August 2024</span>
+      <span class="reading-title">Faced With Heavier Rains, Cities Scramble to Control Polluted Runoff</span>
+      <span class="reading-cta">Read article ↗</span>
+    </a>
+    <a class="reading-card" href="https://globalnews.ca/news/10012631/municipalities-looking-to-build-sponge-cities-for-extreme-rain-events-what-does-that-mean" target="_blank" rel="noopener">
+      <span class="reading-meta">Global News / The Canadian Press · October 2023</span>
+      <span class="reading-title">Municipalities looking to build 'sponge cities' for extreme rain events. What does that mean?</span>
+      <span class="reading-cta">Read article ↗</span>
+    </a>
+    <a class="reading-card" href="https://macleans.ca/society/environment/sponge-city-flooding-solution/" target="_blank" rel="noopener">
+      <span class="reading-meta">Maclean's · September 2023</span>
+      <span class="reading-title">The Big Idea: Investing in "sponge cities" can mitigate the toll of climate change</span>
+      <span class="reading-cta">Read article ↗</span>
+    </a>
+    <a class="reading-card" href="https://theconversation.com/how-green-roofs-can-protect-city-streets-from-flooding-82679" target="_blank" rel="noopener">
+      <span class="reading-meta">The Conversation · 2017</span>
+      <span class="reading-title">How green roofs can protect city streets from flooding</span>
+      <span class="reading-cta">Read article ↗</span>
+    </a>
   </div>
 </div></section>
 
